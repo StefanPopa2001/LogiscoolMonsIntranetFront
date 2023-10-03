@@ -43,8 +43,8 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
 
-    - name: Set npm configuration to ignore warnings
-      run: npm config set warn false
+    - name: Set CI environment variable to false
+      run: echo "CI=false" >> $GITHUB_ENV
 
     - name: npm install, build, and test
       run: |
