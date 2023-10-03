@@ -31,6 +31,7 @@ permissions:
   contents: read
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -64,6 +65,9 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
+    - name: Disable treating warnings as errors
+      run: echo "::set-env name=CI::false" # Disable treating warnings as errors
+
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
       with:
