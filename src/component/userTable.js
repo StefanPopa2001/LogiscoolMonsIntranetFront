@@ -21,7 +21,6 @@ const UserTable = () => {
             minWidth: 150,
             renderCell: (params) => (
                 <Select
-
                     value={params.value}
                     onChange={(event) => handleRoleChange(params.id, event.target.value)}
                     defaultValue={params.row.role || ''} 

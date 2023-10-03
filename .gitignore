@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/node_modules
 /.pnp
 .pnp.js
 
@@ -16,9 +17,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-node_modules
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-node_modules/.cache/babel-loader/0084f560dc8a383850438945e6835422954ee4c9b658f04ca8307c4132009777.json
