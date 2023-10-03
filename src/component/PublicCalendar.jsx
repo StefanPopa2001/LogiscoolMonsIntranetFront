@@ -23,7 +23,7 @@ moment.locale("fr");
 const localizer = momentLocalizer(moment);
 const DnDCalendar = Calendar;
 
-const AdminSettings = JSON.parse(localStorage.getItem('AdminSettings'));
+const AdminSettings = JSON.parse(localStorage.getItem('AdminSettings')) +'';
 let a = AdminSettings.calendarWeeksStartingDate
 
 const calculateWeekNumber = (date) => {

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField, FormControlLabel, Checkbox, Typography } from '@mui/material';
 import Toast from './Toast';
 import Dataservice from '../dataservice/dataservice';
-import bcrypt from 'bcryptjs';
 
 const UpdatePassword = () => {
   const [open, setOpen] = useState(false);
@@ -61,7 +60,7 @@ const UpdatePassword = () => {
     setShowPasswordError(false);
 
     // Hash the password
-    const hashedPassword = bcrypt.hashSync(formData.password1, 10);
+    const hashedPassword = "d"//bcrypt.hashSync(formData.password1, 10);
 
     Dataservice.UpdatePassword(hashedPassword)
       .then((response) => {
