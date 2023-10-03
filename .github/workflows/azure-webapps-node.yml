@@ -43,8 +43,8 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
 
-    - name: Set npm_config_strict to false
-      run: npm config set npm_config_strict false
+    - name: Set npm configuration to ignore warnings
+      run: npm config set warn false
 
     - name: npm install, build, and test
       run: |
