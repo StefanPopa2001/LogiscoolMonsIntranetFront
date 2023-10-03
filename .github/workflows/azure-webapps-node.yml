@@ -43,6 +43,9 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
 
+    - name: Set npm_config_strict to false
+      run: npm config set npm_config_strict false
+
     - name: npm install, build, and test
       run: |
         npm install
@@ -65,9 +68,6 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Disable treating warnings as errors
-      run: echo "::set-env name=CI::false" # Disable treating warnings as errors
-
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
       with:
